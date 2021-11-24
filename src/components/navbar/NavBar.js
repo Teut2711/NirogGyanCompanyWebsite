@@ -7,9 +7,6 @@ import Grid from "@material-ui/core/Grid";
 import MenuIcon from "@material-ui/icons/Menu";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useSpring, animated } from 'react-spring'
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {
   NavLink
@@ -164,7 +161,7 @@ const NavItemsSmallScreen = ({ links }) => {
 
   return <> {isSmallScreen && isButtonPressed ? (
     <animated.div style={props}>
-      <Grid container item key='navItems' sm={12} direction="column" justifyContent="space-around" alignItems="center" style={{ gap: "0.5rem", padding: "0.5rem" }}>
+      <Grid container item sm={12} direction="column" justifyContent="space-around" alignItems="center" style={{ gap: "0.5rem", padding: "0.5rem" }}>
         <LinksMenu links={links} />
       </Grid>
     </animated.div>
@@ -178,7 +175,7 @@ const NavItemsMediumScreen = ({ links }) => {
 
 
   return <> {!isSmallScreen ? (
-    <Grid container item key='navItems' md={10} justifyContent="space-evenly" >
+    <Grid container item md={10} justifyContent="space-evenly" >
       <LinksMenu links={links} />
     </Grid>
   ) : ""
@@ -186,6 +183,15 @@ const NavItemsMediumScreen = ({ links }) => {
 }
 
 const LinksMenu = ({ links }) => {
+  return <>
+    {
+      Object.values(links).map(({ text, url, subLinks }, index) => <NavItem key={index} text={text} url={url} subLinks={subLinks} />)
+    }
+  </>
+}
+
+
+const NavItem = ({ text, url, subLinks }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -206,29 +212,23 @@ const LinksMenu = ({ links }) => {
     </NavLink>
   </Grid>
 
-  const NavItem = ({ text, url, subLinks }) => <>
-    <NavLink to={url}
-      className={isActive => isActive ? classes.activeNavItemsStyling : classes.inActiveNavItemsStyling} >
-      {text}
-    {
-      subLinks &&
-      <IconButton size="small" style={{ color: "#fff" }}>
-        {"  "}|<ExpandMoreIcon onClick={handleClick} />
-      </IconButton>
-    }
-    {open && subLinks && <SubMenu subLinks={subLinks} />}
-    </NavLink>
-  </>
+
 
 
   return <>
-    {
-      Object.values(links).map(({ text, url, subLinks }, index) => <NavItem key={index} text={text} url={url} subLinks={subLinks} />)
-    }
+    <NavLink to={url}
+      className={isActive => isActive ? classes.activeNavItemsStyling : classes.inActiveNavItemsStyling} >
+      {text}
+      {
+        subLinks &&
+        <IconButton size="small" style={{ color: "#fff" }}>
+          {"  "}|<ExpandMoreIcon onClick={handleClick} />
+        </IconButton>
+      }
+      {open && subLinks && <SubMenu subLinks={subLinks} />}
+    </NavLink>
   </>
 }
-
-
 
 function useSmallScreen() {
   const theme = useTheme();
@@ -244,7 +244,7 @@ function useSmallScreen() {
 
 
 const ImageBox = ({ image: { imagePath, altText = "logo-default" } }) => (
-  <Grid key="imgBox" item xs={6} md={2} style={{ textAlign: "right" }} >
+  <Grid item xs={6} md={2} style={{ textAlign: "right" }} >
     <img loading="lazy"
       src={imagePath}
       alt={altText}

@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   inActiveNavItemsStyling: {
+   textAlign: "center",
     textDecoration: "none",
     fontSize: "1.25rem",
     margin: "8px 11px",
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   activeNavItemsStyling: {
     fontSize: "1.25rem",
     display: "block",
-
+    textAlign: "center",
     textDecoration: "none",
     color: "#fff",
     backgroundColor: "#163b76",
@@ -88,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     background: "#163b76",
     zIndex: 1000,
-    transform: "translate(-5%, 5%)",
+    transform: "translate(-10%, 40%)",
     width: "max-content"
   }
 
@@ -162,7 +163,7 @@ const NavItemsSmallScreen = ({ links }) => {
   return <> {isSmallScreen && isButtonPressed ? (
     <animated.div style={props}>
       <Grid container item sm={12} direction="column" justifyContent="space-around" alignItems="center" style={{ gap: "0.5rem", padding: "0.5rem" }}>
-        <LinksMenu links={links} />
+        <NavLinksMenu links={links} />
       </Grid>
     </animated.div>
   ) : ""
@@ -174,15 +175,14 @@ const NavItemsMediumScreen = ({ links }) => {
   const isSmallScreen = useSmallScreen();
 
 
-  return <> {!isSmallScreen ? (
-    <Grid container item md={10} justifyContent="space-evenly" >
-      <LinksMenu links={links} />
+  return <> {!isSmallScreen &&
+    <Grid container item md={10} justifyContent="flex-end" >
+      <NavLinksMenu links={links} />
     </Grid>
-  ) : ""
   }</>
 }
 
-const LinksMenu = ({ links }) => {
+const NavLinksMenu = ({ links }) => {
   return <>
     {
       Object.values(links).map(({ text, url, subLinks }, index) => <NavItem key={index} text={text} url={url} subLinks={subLinks} />)
@@ -192,14 +192,13 @@ const LinksMenu = ({ links }) => {
 
 
 const NavItem = ({ text, url, subLinks }) => {
+
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
-    setOpen(!open)
-  };
+  const handleClick = () => { setOpen(!open) };
 
-  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown}>
+  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown} >
     {subLinks.map(({ text, url: suburl }, index) => <SubLink key={index} url={suburl} text={text} />)}
   </Grid>
 
@@ -215,19 +214,24 @@ const NavItem = ({ text, url, subLinks }) => {
 
 
 
-  return <>
-    <NavLink to={url}
-      className={isActive => isActive ? classes.activeNavItemsStyling : classes.inActiveNavItemsStyling} >
-      {text}
+  return <Grid container item md={2} justifyContent="center" alignItems="center">
+    <Grid item md={10}>
+      <NavLink to={url}
+        className={isActive => isActive ? classes.activeNavItemsStyling : classes.inActiveNavItemsStyling} >
+        {text}
+      </NavLink>
+    </Grid>
+    <Grid item md={2} style={{transform:"translateX(-80%)"}}>
       {
         subLinks &&
-        <IconButton size="small" style={{ color: "#fff" }}>
-          {"  "}|<ExpandMoreIcon onClick={handleClick} />
+        <IconButton size="small" style={{ color: "#fff", backgroundColor:"#163b76" }}>
+       <ExpandMoreIcon onClick={handleClick} />
         </IconButton>
       }
-      {open && subLinks && <SubMenu subLinks={subLinks} />}
-    </NavLink>
-  </>
+    </Grid>
+    {open && subLinks && <SubMenu subLinks={subLinks} />}
+  </Grid>
+
 }
 
 function useSmallScreen() {

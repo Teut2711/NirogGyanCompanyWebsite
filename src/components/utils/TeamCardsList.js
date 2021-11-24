@@ -1,10 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import { Typography, IconButton, Card, CardActionArea, CardActions, CardContent, Box } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import IconButton from "@material-ui/core/IconButton";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 import CarousalWithArrowsOnDesktop from "./CarousalWithArrowsOnDesktop"
 import { useNumberOfSlides } from "../customHooks"
 import LinkedinIcon from '@material-ui/icons/LinkedIn';
@@ -12,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "300px",
+        width: "97%",
         marginBottom: "0.5rem",
     },
     cardsList: {
@@ -53,7 +55,7 @@ export default function TeamCardsList({ content }) {
     const classes = useStyles();
     const numberOfSlides = useNumberOfSlides();
 
-    return <Grid container className={classes.cardsList} item justifyContent="center" alignItems="space-around" >
+    return <Grid container className={classes.cardsList} item justifyContent="center" >
         <CarousalWithArrowsOnDesktop card={<TeamCard />} content={content} dotsOnDeskTop={true} numberOfSlides={numberOfSlides} />
     </Grid>
 }
@@ -84,8 +86,9 @@ const TeamCard = ({ image: { imagePath, altText = "logo-default" }, heading, con
                     <Typography variant="h5">
                         <Box >
                             {
-                                icons.map(icon => (
+                                icons.map((icon, index) => (
                                     <IconButton
+                                        key={index}
                                         component={Link}
                                         to={absoluteurl}
                                         rel="noreferrer"

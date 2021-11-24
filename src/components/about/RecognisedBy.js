@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Box } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 import HeadingWithText from "../utils/HeadingWithText";
-import { useMediaQuery, useTheme } from "@material-ui/core"
+// import { useMediaQuery, useTheme } from "@material-ui/core"
 import CarousalInfiniteAutomatic from "../utils/CarousalInfiniteAutomatic";
 
 import '@brainhubeu/react-carousel/lib/style.css';
@@ -22,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
 export default function RecognisedBy({ state: recognisedBy }) {
   const classes = useStyles();
 
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  // const theme = useTheme();
+  // const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
 
     <Grid container className={classes.root} direction="column" justifyContent="center" alignItems="center">

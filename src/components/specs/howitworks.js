@@ -1,30 +1,30 @@
 import * as path from "path";
 
-import heroImage from "../howitworks/static/imgs/hero-image.svg"
+const heroImage = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/hero-image.svg"
 
-import reportDigital from "../howitworks/static/imgs/report-digital.png"
+const reportDigital = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/report-digital.png"
 
-import reportPdfKidney from "../howitworks/static/imgs/report-pdf-kidney.svg"
-import reportPdfLiver from "../howitworks/static/imgs/report-pdf-liver.svg"
-import reportPdfCovid from "../howitworks/static/imgs/report-pdf-covid.svg"
+const reportPdfKidney = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/report-pdf-kidney.svg"
+const reportPdfLiver = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/report-pdf-liver.svg"
+const reportPdfCovid = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/report-pdf-covid.svg"
 
-import mainApiIntegration from "../howitworks/static/imgs/main-api-integration.svg"
-import mainSoftware from "../howitworks/static/imgs/main-software.svg"
-import mainReport from "../howitworks/static/imgs/main-report.svg"
-import mainCustomer from "../howitworks/static/imgs/main-customer.svg"
-
-
-import arrow1 from "../howitworks/static/imgs/arrow1.svg"
-import arrow2 from "../howitworks/static/imgs/arrow2.svg"
-import arrow3 from "../howitworks/static/imgs/arrow3.svg"
-
-import line1 from "../howitworks/static/imgs/line1.svg"
-import line2 from "../howitworks/static/imgs/line2.svg"
+const mainApiIntegration = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/main-api-integration.svg"
+const mainSoftware = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/main-software.svg"
+const mainReport = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/main-report.svg"
+const mainCustomer = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/main-customer.svg"
 
 
+const arrow1 = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/arrow1.svg"
+const arrow2 = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/arrow2.svg"
+const arrow3 = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/arrow3.svg"
 
-export default (function () {
-    return {
+const line1 = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/line1.svg"
+const line2 = "https://dn96iqv3kf32j.cloudfront.net/howitworks/static/imgs/line2.svg"
+
+
+const howitworks = {
+    self: { url: "/how-it-works", text: "How It Works", onNavbar: true},
+
         HeroSection: {
             contentLeft: {
 
@@ -66,7 +66,7 @@ export default (function () {
         Main: {
             header: {
                 heading: [{ text: "How It Works" }],
-                description: "How does different things are interlinked with each other to form streamline."
+                description: "The technical magic behind the scenes : 100% automated and error-free."
             },
             cardsList: [
                 {
@@ -79,7 +79,7 @@ export default (function () {
                 {
                     image: { imagePath: mainSoftware, altText: "mainSoftware" },
                     heading: "Software",
-                    description: "NirogGyan’s software creates the perfect SmartReport - each test is atomised as ‘card’ & each panel is linked witth the ‘knowledge bank’",
+                    description: "NirogGyan’s software creates the perfect Smart Report - each test is atomised as ‘card’ & each panel is linked witth the ‘knowledge bank’",
                 },
                 {
                     image: { imagePath: mainReport, altText: "mainReport" },
@@ -109,4 +109,4 @@ export default (function () {
             },
         },
     };
-})();
+export default howitworks;

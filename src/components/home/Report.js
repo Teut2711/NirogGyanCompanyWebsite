@@ -1,25 +1,23 @@
 import React, { useState, useContext, createContext } from "react";
-import { Grid, Typography } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import "@fontsource/nunito-sans";
 import "@fontsource/open-sans";
 import BigRightImageSection from "../utils/BigRightImageSection";
-import { useTheme, useMediaQuery } from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
     contentLeft: {
-
         fontFamily: '"Nunito Sans", "Helvetica", "Arial", sans-serif',
+        padding: "3rem",
         paddingTop: "2rem",
+        [theme.breakpoints.down('sm')]: {
+            padding: "1rem"
+        },
         "&>*": {
             marginBottom: "2rem"
 
-        }
-    },
-    contentLeft: {
-        padding: "3rem",
-        [theme.breakpoints.down('sm')]: {
-            padding: "1rem"
         }
     },
     cardContainer: {
@@ -41,6 +39,15 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#fff",
 
         "&:hover": { backgroundColor: "#E9F5FF" },
+    },
+    heading:{
+        fontFamily: '"Nunito Sans", "Helvetica", "Arial", sans-serif',
+        fontSize: "2.25rem",
+        fontWeight: "700"
+    },
+    description:{
+        fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
+        fontSize: "1rem"
     }
 }
 ));
@@ -89,17 +96,19 @@ const ContentLeft = ({ content }) => {
 }
 
 const Header = ({ content }) => {
+    const classes = useStyles();
+
     return <Grid item style={{ paddingBottom: "1rem" }}>
         <Typography
             variant="h3"
-            style={{ fontFamily: '"Nunito Sans", "Helvetica", "Arial", sans-serif' }}
+            className={classes.heading}
         >
             {content.heading}
         </Typography>
         <Typography
             variant="h6"
             color="textSecondary"
-            style={{ fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif' }}
+            className = {classes.description}
         >
             {content.description}
         </Typography>
@@ -119,13 +128,11 @@ const CardsList = ({ content }) => {
 const Card = ({ image: { imagePath, altText = "logo-default" }, name, imageIdentity }) => {
     const classes = useStyles();
     const { setReportName } = useContext(ReportContext);
-    const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
 
         <Grid container item sm={6} className={classes.cardContainer} >
-            <Grid container item className={classes.card} direction="column" justifyContent="center" onMouseOver={() => !isSmallScreen ? setReportName(imageIdentity) : ""}>
+            <Grid container item className={classes.card} direction="column" justifyContent="center" onMouseOver={() => setReportName(imageIdentity)}>
                 <Grid item>
                     <img loading="lazy" src={imagePath} alt={altText} width="auto" height="50px" />
                 </Grid>

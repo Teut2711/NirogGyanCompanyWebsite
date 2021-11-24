@@ -33,9 +33,7 @@ export default function CarouselInfiniteAutomatic({ logoImages }) {
         ]}
         animationSpeed={1000}
     >
-        {logoImages.map(({ imagePath, altText = "logo-default", link = "" }, index) => link ?
-            <a href={link} key={index} ><img loading="lazy" src={imagePath} alt={altText} width="289" height="131" className={classes.image} /></a> :
-            <img loading="lazy" key={index} src={imagePath} alt={altText} width="289" height="131" className={classes.image} />
+        {logoImages.map(({ imagePath, altText = "logo-default", link }, index) => <a href={link} key={index} rel="noopener"><img loading="lazy" key={index} src={imagePath} alt={altText} width="289" height="131" className={classes.image} /></a>
         )}
     </Carousel>;
 }

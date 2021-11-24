@@ -1,9 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 import HeadingWithText from "../utils/HeadingWithText";
-import { useMediaQuery, useTheme } from "@material-ui/core"
-import CarousalWithArrowsOnDesktop from "../utils/CarousalWithArrowsOnDesktop"
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import CarousalWithArrowsOnDesktop from "../utils/CarousalWithArrowsOnDesktop";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "2rem 0",
     margin: "1rem",
     textAlign: "center",
+    
   },
   videoWrapper: {
     //moreInfo: https://css-tricks.com/fluid-width-video/#iframe-video-youtube-vimeo-etc
@@ -67,7 +70,24 @@ const CardsList = ({ content }) => {
   </Grid>
 }
 
-const Card = ({ link, title = "YouTube video player" }) => {
+// const Card = ({ link, title = "YouTube video player" }, videoId, altText="video" ) => {
+//   const classes = useStyles();
+
+//   return (
+//     <Grid item className={classes.card}  >
+//       {/* <iframe 
+//         height="220px"
+//         rel="preload"
+//         src={link}
+//         title={title}
+//         frameBorder="2"
+//         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//       ></iframe> */}
+//     </Grid>
+
+//   );
+// }
+const Card = ({ link, title = "YouTube video player", videoId, altText="video" }) => {
   const classes = useStyles();
 
   return (
@@ -77,14 +97,14 @@ const Card = ({ link, title = "YouTube video player" }) => {
         aspectRatio: "425/280"
       }}
         height="220px"
-        rel="prefetch"
+        rel="preload"
         src={link}
         title={title}
         frameBorder="2"
+        srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:53px/1.5 sans-serif;color:white;border:12px red;text-shadow:0 0 0.8em black}</style><a href=https://www.youtube.com/embed/${videoId}?autoplay=1><img src=https://img.youtube.com/vi/${videoId}/hqdefault.jpg alt='${altText}'><span>▶</span></a>`}
       ></iframe>
     </Grid>
 
   );
 }
-
 

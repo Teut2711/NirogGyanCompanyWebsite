@@ -1,6 +1,8 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import { Grid, Box, Hidden } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Hidden from "@material-ui/core/Hidden";
 import { makeStyles } from "@material-ui/core/styles";
 import "@fontsource/nunito-sans";
 import "@fontsource/open-sans";
@@ -38,8 +40,10 @@ const useStyles = makeStyles((theme) => ({
   card1: {
     borderRadius: "50%",
     boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
+    width:"75%",
     [theme.breakpoints.down("sm")]: {
-      marginTop:"44%"
+      marginTop:"44%",
+      width:"100%",
     }
 
   },
@@ -86,7 +90,7 @@ export default function Main({ state: main }) {
                   </Box>
                 </Typography>
                 <Hidden smDown>
-                  <Box m={1} style={{ marginTop: "10%", marginLeft: "-10%" }}>
+                  <Box m={1} style={{ marginTop: "10%", marginLeft: "-27%" }}>
                     <img width="100%" src={main.cardsList[0].linePath} alt="doctor" />
                   </Box>
                 </Hidden>
@@ -149,7 +153,7 @@ export default function Main({ state: main }) {
             </Grid>
             <Hidden smDown>
               <Grid item>
-                <img width="90%" src={main.cardsList[2].linePath} alt="doctor" />
+                <img width="95%" src={main.cardsList[2].linePath} alt="doctor" />
               </Grid>
             </Hidden>
           </Grid>
@@ -162,7 +166,7 @@ export default function Main({ state: main }) {
               <Grid item container xs={3}>
                 <Grid item md={11}></Grid>
                 <Grid item md={1}>
-                  <img height="66%" src={main.cardsList[3].linePath} alt="doctor" />
+                  <img height="82%" src={main.cardsList[3].linePath} alt="doctor" />
                 </Grid>
               </Grid>
             </Hidden>
@@ -193,6 +197,6 @@ export default function Main({ state: main }) {
 const Image = ({ reference, inView, image: { imagePath, altText } }) => {
   const classes = useStyles();
   return <Grid item xs={5} ref={reference} >
-    <img width="95%" src={imagePath} className={clsx(classes.card1, inView ? "background-change" : "")}  alt={altText} />
+    <img src={imagePath} className={clsx(classes.card1, inView ? "background-change" : "")}   alt={altText} />
   </Grid>
 }

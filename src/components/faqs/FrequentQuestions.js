@@ -5,8 +5,9 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Grid, Container } from '@material-ui/core';
-import HeadingWithText from "../utils/HeadingWithText"
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import HeadingWithText from "../utils/HeadingWithText";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +29,7 @@ export default function FrequentQuestions({ state: frequentquestions }) {
   const classes = useStyles();
 
   return (
-    <Grid container direction="column" className={classes.root} alignItems="space-evenly">
+    <Grid container item direction="column" className={classes.root} alignItems="center">
       <HeadingWithText content={frequentquestions.header} />
       <Container maxWidth="md">{
         frequentquestions.cardsList.map(

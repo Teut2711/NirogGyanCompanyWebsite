@@ -1,5 +1,10 @@
 import React from "react";
-import { Typography, Grid, List, ListItem, ListItemText, ListSubheader } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import Grid  from "@material-ui/core/Grid";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListSubheader from "@material-ui/core/ListSubheader";
 import { makeStyles } from "@material-ui/core/styles";
 import "@fontsource/nunito-sans";
 import "@fontsource/open-sans";
@@ -9,7 +14,6 @@ import BigRightImageSection from "../utils/BigRightImageSection";
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-
     },
     header: {
         fontFamily: '"Nunito Sans", "Helvetica", "Arial", sans-serif',
@@ -49,7 +53,7 @@ const ContentLeft = ({ content }) => {
 
 const Header = ({ content: { heading, description } }) => {
     const classes = useStyles();
-    return <Grid item direction="column" className={classes.header} justifyContent="space-evenly" alignItems="center">
+    return <Grid container item direction="column" className={classes.header} justifyContent="space-evenly" alignItems="center">
 
         <List >
 

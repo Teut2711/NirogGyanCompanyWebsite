@@ -1,13 +1,10 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import {
-  Grid,
-  Button,
-  IconButton,
-  Link, makeStyles, Fab
-
-} from "@material-ui/core";
-import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
+import { makeStyles } from "@material-ui/core/styles";
+import Fab from "@material-ui/core/Fab";
+// import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import "@fontsource/nunito-sans";
 import "@fontsource/open-sans";
 
@@ -22,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: '"Nunito Sans", "Helvetica", "Arial", sans-serif',
     textAlign: "left",
     fontWeight: "700",
-    color: "#3668d6",
+    // color: "#3668d6",
     [theme.breakpoints.down('sm')]: {
       textAlign: "center",
     }
@@ -123,8 +120,9 @@ const ContentLeft = ({ content, ...props }) => {
     <Grid item >
       <Heading text={content.heading} />
     </Grid>
-    <Grid item>
-      <Description text={content.description} />
+      <Grid item>
+        {content.descriptions.map(description => <Description text={description} />
+        )}
     </Grid>
     <Grid item>
       <ButtonSet content={content.buttons} />
@@ -168,9 +166,16 @@ const Description = ({ text }) => {
 const ButtonSet = ({ content }) => {
   const classes = useStyles();
   return <Grid container item className={classes.buttonSet}>
-    <Grid item md={8}>
-      <ButtonServices button={content.services} />
+    <Grid item container md={8}>
+      <Grid item style={{ marginRight: "8px"}}>
+       <ButtonServices button={content.services} />
+      </Grid>
+      <Grid item>
+        <ButtonServices button={content.calendly}/>
+      </Grid>
     </Grid>
+    
+    
     {/* <Grid item md={4}>
      <ButtonWatchVideo text={content.watchVideo} /> 
     </Grid> */}
@@ -192,21 +197,21 @@ const ButtonServices = ({ button: { text, link } }) => {
 }
 
 
-const ButtonWatchVideo = ({ text }) => {
-  const classes = useStyles();
-  return <Grid container item className={classes.buttonWatchVideoContainer}>
-    <Grid item>
+// const ButtonWatchVideo = ({ text }) => {
+//   const classes = useStyles();
+//   return <Grid container item className={classes.buttonWatchVideoContainer}>
+//     <Grid item>
 
-      <IconButton className={classes.watchVideoButton} style={{ display: "inline-block", textAlign: "center" }}>
-        <PlayCircleFilledIcon className={classes.videoButtonIcon} />
-        <Typography variant="subtitle2" >
-          {text}
-        </Typography>
-      </IconButton>
-    </Grid>
+//       <IconButton className={classes.watchVideoButton} style={{ display: "inline-block", textAlign: "center" }}>
+//         <PlayCircleFilledIcon className={classes.videoButtonIcon} />
+//         <Typography variant="subtitle2" >
+//           {text}
+//         </Typography>
+//       </IconButton>
+//     </Grid>
 
-  </Grid>
-}
+//   </Grid>
+// }
 
 
 const ContentRight = ({ content, ...props }) => {

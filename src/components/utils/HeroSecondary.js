@@ -1,10 +1,8 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import {
-    Grid,
-    Breadcrumbs,
-    Link
-} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import "@fontsource/nunito-sans";
 import "@fontsource/open-sans";
@@ -76,7 +74,7 @@ const ContentLeft = ({ content }) => {
 
         { backgroundImage: `url(${content.backgroundImage})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
 
-        <Grid container md={8} direction="column">
+        <Grid container item md={8} direction="column">
             <Grid item>
                 <Typography
                     variant="h2"
@@ -114,6 +112,6 @@ const ContentRight = ({ content }) => {
     const classes = useStyles();
     const { imagePath, altText = "logo-default" } = content.image;
     return <Grid item md={6} className={classes.contentRight} >
-        <img loading="lazy" rel="preload" src={imagePath} alt={altText} />
+        <img loading="lazy" src={imagePath} alt={altText} />
     </Grid>
 }

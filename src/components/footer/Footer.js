@@ -66,6 +66,7 @@ const Block1 = ({ content, ...props }) => {
 
 const Block = ({ content, ...props }) => {
     const classes = useStyles();
+    console.log(content)
     return <Grid item className={classes.block} {...props}>
         <Typography variant="h5">
             <Box fontWeight="fontWeightMedium" m={1}>

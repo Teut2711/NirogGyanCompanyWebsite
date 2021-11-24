@@ -134,7 +134,7 @@ function App() {
           {/* <Box overflow="hidden">
                <Media loading /> 
             </Box> */}
-          <Grid container spacing={0} direction="column" alignItems="center" justify="center" className={classes.media}>
+          <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" className={classes.media}>
             <img loading="lazy" width="60%" height="80%" src={review} alt="review" />
           </Grid>
 

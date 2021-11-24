@@ -81,7 +81,6 @@ const Card = ({ link, title = "YouTube video player" }) => {
         src={link}
         title={title}
         frameBorder="2"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
     </Grid>
 

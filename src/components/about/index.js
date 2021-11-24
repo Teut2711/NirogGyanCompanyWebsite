@@ -12,7 +12,7 @@ export default function About({ state, children }) {
     const { setPage } = useContext(PageContext);
     useEffect(() => {
         setPage("about")
-    })
+    }, [setPage]);
 
     return <React.Fragment>
         <HeroSection state={state.HeroSection} />

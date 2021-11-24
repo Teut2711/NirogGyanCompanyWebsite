@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import HeroSection from './HeroSection';
 import Services from "./Services";
 import HeroSection1 from "./HeroSection1";

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import HeroSection from './HeroSection';
 import Main from './Main';
 import Grid from "@material-ui/core/Grid"

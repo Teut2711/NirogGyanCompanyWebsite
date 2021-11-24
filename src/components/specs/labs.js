@@ -1,17 +1,5 @@
 const heroImage = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/hero-image.svg"
 
-const brandAlArab = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/logo-1.jpg"
-const brandMax = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/logo-2.jpg"
-const brandDang = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/logo-3.jpg"
-const brandCrelio = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/logo-4.jpg"
-const brandIqvia = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/logo-5.jpg"
-const brandItdose = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/logo-6.jpg"
-const brandPracto = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/logo-7.jpg"
-
-
-const marketCardItem1 = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs/market-card-item-1.png"
-const marketBackground = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs/market-background.svg"
-
 
 
 const recognisedBy1 = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs/recognised-by-1.png"
@@ -102,9 +90,9 @@ const labs = {
             content: {
                 heading: "Advantages offered by us to engage their customer (USP)",
                 description: [
-                    { text: "Increase brand visibility: Upto 3 times higher traction in social media was seen after adoption of digital smart reports by our clients."},
-                    { text: "Increase repeat rate: On average the number of patients who visited the lab again increased by 10 % after adoption of smart reports."},
-                    { text: "Increase patient satisfaction and better google reviews."},
+                    { text: "Increase brand visibility: Upto 3 times higher traction in social media was seen after adoption of digital smart reports by our clients." },
+                    { text: "Increase repeat rate: On average the number of patients who visited the lab again increased by 10 % after adoption of smart reports." },
+                    { text: "Increase patient satisfaction and better google reviews." },
                 ]
             }
         },

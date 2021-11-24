@@ -79,12 +79,12 @@ export default function Main({ state: main }) {
 
             <Grid item container style={{ marginTop: "15%" }} xs={8}>
               <Grid item>
-                <Typography variant="h4" color="textPrimary">
+                <Typography variant="h4" color="textPrimary" component="div">
                   <Box fontWeight="fontWeightMedium" m={1}>
                     {main.cardsList[0].heading}
                   </Box>
                 </Typography>
-                <Typography variant="paragraph" color="textSecondary" >
+                <Typography variant="paragraph" color="textSecondary" component="div">
                   <Box m={1} style={{ marginTop: "5%" }}>
                     {main.cardsList[0].description}
                   </Box>

@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
   dropdown: {
     borderRadius: "10px",
     position: "absolute",
-    background: "#163b76",
+    background: "#fff",
     zIndex: 1000,
     transform: "translate(-10%, 60%)",
     width: "max-content"
@@ -204,7 +204,6 @@ const NavItem = ({ text, url, subLinks }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const handleClick = (state) => { setOpen(state) };
 
   const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown}  >
     {subLinks.map(({ text, url: suburl }, index) => <SubLink key={index} url={suburl} text={text} />)}
@@ -230,12 +229,12 @@ const NavItem = ({ text, url, subLinks }) => {
     <Grid item style={{ transform: "translateX(-70%)" }}>
       {
         subLinks &&
-        <IconButton size="small" className={classes.iconButton}>
-          <ExpandMoreIcon onClick={() => setOpen(state => !state)} />
+        <IconButton size="small" className={classes.iconButton} onClick={() => setOpen(state => !state)}>
+          <ExpandMoreIcon  />
         </IconButton>
       }
     </Grid>
-    {open && subLinks && <SubMenu subLinks={subLinks} />}
+    {open && subLinks && <SubMenu subLinks={subLinks} onMouseExit={() => setOpen(false)} />}
   </Grid>
 
 }

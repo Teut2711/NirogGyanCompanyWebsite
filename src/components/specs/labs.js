@@ -15,7 +15,7 @@ const marketBackground = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs
 
 
 
-const servicesPdfWhatsapp = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-pdf-whatsapp.png"
+const servicesPdfWhat0sapp = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-pdf-whatsapp.png"
 const servicesMarketing = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-marketing.png"
 const servicesAffordable = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-affordable.png"
 const servicesBackground = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-background.png"
@@ -55,9 +55,9 @@ const labs = {
 
     HeroSection: {
         contentLeft: {
-            heading: { line1: "Smart reports for Labs", line2: "-" },
+            heading: { line1: "Smart reports for Labs", line2: "" },
             descriptions: [
-                "If you are looking for a complete digital report solution for your lab then you are at the right place. ",
+                "If you are looking for a complete digital report solution for your lab then you are at the right place.",
             ],
             buttons: {
                 services: {

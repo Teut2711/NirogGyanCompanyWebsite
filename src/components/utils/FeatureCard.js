@@ -55,14 +55,12 @@ export default function FeatureCard({ image: { imagePath, altText = "logo-defaul
                 </Grid>
             </Grid>
             <Grid item xs={8} className={classes.textBox}>
-                <Typography>
                     <Box fontWeight="fontWeightLight" m={1}>
                         {textThin}
                     </Box>
                     <Box fontWeight="fontWeightBold" m={1}>
                         {textBold}
                     </Box>
-                </Typography>
             </Grid>
         </Grid>
     )

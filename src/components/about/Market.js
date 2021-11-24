@@ -136,9 +136,6 @@ const CardsList = ({ content }) => {
 const Card = ({ image: { imagePath, altText = "logo-default" }, items }) => {
   const classes = useStyles();
 
-  var path = require('path');
-  var scriptName = path.basename(__filename);
-  console.log(scriptName)
   return (
     <Grid container className={classes.card}   >
       <Grid container item xs={4} className={classes.imageBox} justifyContent="center" alignItems="center">

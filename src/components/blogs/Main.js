@@ -162,7 +162,10 @@ const ContentRight = ({ content }) => {
       return <Grid container item className={classes.commonmargin}>
         {
           cardsList.map(
-            (props, index) => <card.type  {...props} key={index} />
+            (props, index) => {
+              let p = { ...props, key: index }
+              return <card.type  {...p} />
+            }
           )
         }
       </Grid>

@@ -99,18 +99,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MailingList({ state: mailingList }) {
     const classes = useStyles();
-    return <Grid container className={classes.root}>
-        <form  style={{ width: "100%", display: "flex" }} action={mailingList.actionurl} method="post">
-            <Block1 content={mailingList.block1} md={6} />
-            <Block2 content={mailingList.block2} md={6} />
-        </form>
+
+    return <Grid container className={classes.root} component="form"
+        action={mailingList.actionurl} method="post">
+
+        <Block1 content={mailingList.block1} md={6} />
+        <Block2 content={mailingList.block2} md={6} />
     </Grid>
 }
 
 const Block1 = ({ content, ...props }) => {
     const classes = useStyles()
     return <Grid container item sm={6} justifyContent="center" alignItems="center" {...props}>
-        <Grid container item md={10} direction="column" justifyContent="space-around" alignItems="flex-start" className={classes.block1} >
+        <Grid container item md={10} direction="column" justifyContent="space-around" alignItems="stretch" className={classes.block1} >
             <Grid item>
                 <Typography
                     variant="h5"

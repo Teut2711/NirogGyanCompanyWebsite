@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   inActiveNavItemsStyling: {
-   textAlign: "center",
+    textAlign: "center",
     textDecoration: "none",
     fontSize: "1.25rem",
     margin: "8px 11px",
@@ -86,13 +86,21 @@ const useStyles = makeStyles((theme) => ({
 
   },
   dropdown: {
+    borderRadius: "10px",
     position: "absolute",
     background: "#163b76",
     zIndex: 1000,
-    transform: "translate(-10%, 40%)",
+    transform: "translate(-10%, 60%)",
     width: "max-content"
-  }
+  },
+  iconButton: {
+    color: "#7a7878",
+    "&:hover": {
+      color: "#fff",
+      backgroundColor: "#163b76"
+    }
 
+  }
 
 }));
 
@@ -109,7 +117,7 @@ export default function NavBar({ state: navBar }) {
       <animated.div className={classes.root} style={props}>
         <AppBar position="static" style={{ backgroundColor: "#ffffff" }}>
           <Toolbar className={classes.toolbar} >
-            <Grid container >
+            <Grid container justifyContent="space-between" >
               <ImageBox image={navBar.logo} />
               <MenuOpenButton />
               <NavItemsMediumScreen links={navBar.links} />
@@ -176,7 +184,7 @@ const NavItemsMediumScreen = ({ links }) => {
 
 
   return <> {!isSmallScreen &&
-    <Grid container item md={10} justifyContent="flex-end" >
+    <Grid container item style={{ width: "max-content" }} >
       <NavLinksMenu links={links} />
     </Grid>
   }</>
@@ -196,14 +204,14 @@ const NavItem = ({ text, url, subLinks }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => { setOpen(!open) };
+  const handleClick = (state) => { setOpen(state) };
 
-  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown} >
+  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown}  >
     {subLinks.map(({ text, url: suburl }, index) => <SubLink key={index} url={suburl} text={text} />)}
   </Grid>
 
   const SubLink = ({ url, text }) => <Grid item>
-    <NavLink exact to={url} onClick={handleClick} className={
+    <NavLink exact to={url} className={
       isActive =>
         isActive ? classes.activeNavItemsStyling : classes.inActiveNavItemsStyling
     }>
@@ -212,20 +220,18 @@ const NavItem = ({ text, url, subLinks }) => {
   </Grid>
 
 
-
-
-  return <Grid container item md={2} justifyContent="center" alignItems="center">
-    <Grid item md={10}>
+  return <Grid container item style={{ width: "max-content" }} justifyContent="center" alignItems="center">
+    <Grid item>
       <NavLink to={url}
         className={isActive => isActive ? classes.activeNavItemsStyling : classes.inActiveNavItemsStyling} >
         {text}
       </NavLink>
     </Grid>
-    <Grid item md={2} style={{transform:"translateX(-80%)"}}>
+    <Grid item style={{ transform: "translateX(-70%)" }}>
       {
         subLinks &&
-        <IconButton size="small" style={{ color: "#fff", backgroundColor:"#163b76" }}>
-       <ExpandMoreIcon onClick={handleClick} />
+        <IconButton size="small" className={classes.iconButton}>
+          <ExpandMoreIcon onClick={() => setOpen(state => !state)} />
         </IconButton>
       }
     </Grid>

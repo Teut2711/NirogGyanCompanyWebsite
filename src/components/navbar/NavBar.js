@@ -205,7 +205,7 @@ const NavItem = ({ text, url, subLinks }) => {
   const [open, setOpen] = useState(false);
 
 
-  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown}  >
+  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown}>
     {subLinks.map(({ text, url: suburl }, index) => <SubLink key={index} url={suburl} text={text} />)}
   </Grid>
 
@@ -229,8 +229,11 @@ const NavItem = ({ text, url, subLinks }) => {
     <Grid item style={{ transform: "translateX(-70%)" }}>
       {
         subLinks &&
-        <IconButton size="small" className={classes.iconButton} onClick={() => setOpen(state => !state)}>
-          <ExpandMoreIcon  />
+        <IconButton size="small" className={classes.iconButton}
+          onClick={() => setOpen(state => !state)}
+        >
+
+          <ExpandMoreIcon />
         </IconButton>
       }
     </Grid>

@@ -22,5 +22,5 @@ export default function Home({ state }) {
             <Report state={state.Report} />
             <Achievements state={state.Achievements} />
             <ClientMessage state={state.ClientMessage} />
-        </Grid >)
+        </Grid>)
 }

@@ -115,9 +115,11 @@ const Block4 = ({ content, ...props }) => {
         </Grid>
         <Grid container item direction="row" className={classes.icons} >
             {content.images.map(
-                ({ imagePath, altText = "logo-default", link }, index) => <Grid item key={index} ><a key={index} href={link} rel="noreferrer" target="_blank">
-                    <img loading="lazy" src={imagePath} alt={altText} />
-                </a></Grid>)}
+                ({ imagePath, altText = "logo-default", link }, index) => <Grid item key={index} >
+                    <a key={index} href={link} rel="noreferrer" target="_blank">
+                        <img loading="lazy" src={imagePath} alt={altText} />
+                    </a>
+                </Grid>)}
         </Grid>
     </Grid >
 }

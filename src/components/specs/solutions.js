@@ -61,7 +61,7 @@ const solutions = {
         contentLeft: {
             heading: { line1: "Introduction", line2: "" },
             descriptions: [
-                "Looking at modern technology - based solutions to automate lab processes ?\rPatients cribbing about the quality of their medical lab test reports ?\nMedical marketing campaigns getting stagnant with generic content?",
+                "Looking at modern technology - based solutions to automate lab processes ?\nPatients cribbing about the quality of their medical lab test reports ?\nMedical marketing campaigns getting stagnant with generic content?",
                 "These problems require innovative solutions.Look no further as we have the friend every new-age diagnostics provider needs: the SMART REPORT.",
                 "The ultimate lab reporting software that helps you take a leap forward from an outdated format to a more patient- centric and dynamic style."
             ]
@@ -97,22 +97,22 @@ const solutions = {
             {
                 image: { imagePath: servicesInstant, altText: "instant" },
                 heading: "Advanced Analytics",
-                content: "Our software converts random medical data into a piece of meaningful and useful information. ",
+                content: "See where you can create the maximum impact for your patients, and your business.",
             },
             {
                 image: { imagePath: servicesPdfWhatsapp, altText: "PdfWhatsapp" },
-                heading: "Instant and Automated Available",
-                content: "let your e-lab report shine with your own unique brand colors, logos and formatting style. It is metaphorically like your lab test reports presenting niroggyan’s curated content in your brand’s own voice.",
+                heading: "Instant & Automated",
+                content: "Zero change in lab workflow, and elaborate LIMS integration to give you completely automated and instant online reports.",
             },
             {
                 image: { imagePath: servicesAffordable, altText: "Affordable" },
                 heading: "Unique White Label Lab Branding",
-                content: "We are committed to provide value for money to our clients around the world. We know how to make pocket friendly modern lab reports.",
+                content: "Let your e-lab report shine with your own unique brand colors, logos and formatting style. Our software, your brand.",
             },
             {
                 image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
-                heading: "Super Affordable",
-                content: "We are committed to provide value for money to our clients around the world. We know how to make pocket friendly modern lab reports.",
+                heading: "Budget-friendly",
+                content: "We are value-for-money to all clients across the world.",
             },
         ],
         backgroundImage: servicesBackground
@@ -147,11 +147,41 @@ const solutions = {
                 heading: "Different types of Smart Reports",
 
                 description: [
-                    { url: "https://drive.google.com/file/d/1ECRdR74lhZZkFGmgEScEX_kkndA1Pfe0/view", text: "🏥 Advanced Smart Report" },
-                    { url: "https://drive.google.com/file/d/1GqwSoSYf-Lr5ul1F3dOdBvErfL--yOxa/view", text: "🏥 Compact Smart Report" },
-                    { url: "https://drive.google.com/file/d/1rpQ70lC5xKwND7j2VDK1s5J2Rvh2OKB7/view", text: "🏥 Dynamic Smart Report" },
-                    { url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view", text: "🏥 Smart Summary Report" },
-                    { url: "https://drive.google.com/file/d/1DsOoghabqchcCDrrt8AstwcRMdKVrtrx/view", text: "🏥 Covid Smart Report" }
+                    { 
+                        url: "https://drive.google.com/file/d/1ECRdR74lhZZkFGmgEScEX_kkndA1Pfe0/view",
+                        text: "🏥 Advanced Smart Report",
+                        description: "Comprehensive reports for those who want to know the most about their tests and results, with simple explanations for all biomarkers, large visuals, and elaborate tips (causes, symptoms, diet and lifestyle tips relevant for disease profiles)."
+                    },
+                    { 
+                        url: "https://drive.google.com/file/d/1GqwSoSYf-Lr5ul1F3dOdBvErfL--yOxa/view", 
+                        text: "🏥 Compact Smart Report",
+                        description: "Simple and tabular Smart Reports for those who want to quickly check their visualised results. Customisable and with compact graphs, short tips, minimal text and lesser pages."
+                    },
+                    { 
+                        url: "https://drive.google.com/file/d/1rpQ70lC5xKwND7j2VDK1s5J2Rvh2OKB7/view", 
+                        text: "🏥 Dynamic Smart Report",
+                        description: "Highlight elaborate information for all abnormal results, while normal values are represented in the ‘Compact’ way. It’s the ultimate tool to deliver personalised reports to users and get them to act on their problematic areas." 
+                    },
+                    { 
+                        url: "https://drive.google.com/file/d/1DsOoghabqchcCDrrt8AstwcRMdKVrtrx/view", 
+                        text: "🏥 Covid Smart Report",
+                        description: "QR-code-enabled COVID reports, with self-care tips." 
+                    },
+                    { 
+                        url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view", 
+                        text: "🏥 Smart Summary Report(add-on)",
+                        description: "Entire report summarised in a couple of pages, with focus on the out-of-range biomarkers." 
+                    },
+                    { 
+                        url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view", 
+                        text: "🏥 Body Summary (add-on)",
+                        description: "All test results represented on a digital human body, with their respective profiles and organs." 
+                    },
+                    { 
+                        url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view", 
+                        text: "🏥 Trend Report (historical analysis)",
+                        description: "Graphical representation of disease progression. We show the patient's medical report data from past to present in a single picture. Helps both patients and doctors to keep track of biomarkers and measure effectiveness of treatments over time." 
+                    },
                 ]
             }
         },

@@ -6,14 +6,12 @@ import ProductConsultant from './ProductConsultant';
 import HelpedOrganisations from './HelpedOrganisations';
 import Market from './Market';
 import Believe from './Believe';
+import Grid from "@material-ui/core/Grid"
 
 export default function About({ state, children }) {
-    // const { setPage } = useContext(PageContext);
-    // useEffect(() => {
-    //     setPage("about")
-    // })
 
-    return <React.Fragment>
+
+    return <Grid container direction="column">
         <HeroSection state={state.HeroSection} />
         <Market state={state.Market} />
         <Believe state={state.Believe} />
@@ -21,6 +19,5 @@ export default function About({ state, children }) {
         <HelpedOrganisations state={state.HelpedOrganisations} />
         <ProductConsultant state={state.ProductConsultant} />
         <RecognisedBy state={state.RecognisedBy} />
-        {children}
-    </React.Fragment>
+    </Grid>
 }

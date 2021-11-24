@@ -14,37 +14,12 @@ const marketBackground = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs
 
 
 
-
-const servicesPdfWhat0sapp = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-pdf-whatsapp.png"
-const servicesMarketing = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-marketing.png"
-const servicesAffordable = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-affordable.png"
-const servicesBackground = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-background.png"
-const servicesTemplates = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-templates.png"
-const servicesCorporateOfferings = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-corporate-offerings.png"
-const servicesInstant = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-instant.png"
-
-const reportVitamin = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-vitamin.png"
-const reportKidney = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-kidney.png"
-const reportLipid = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-electrolyte.png"
-const reportDiabetes = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-diabetes.png"
-
-const reportPdfVitamin = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-pdf-vitamin.png"
-const reportPdfKidney = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-pdf-kidney.png"
-const reportPdfLiver = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-pdf-diabetes.png"
-const reportPdfCovid = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/report-pdf-lipid.png"
-
-const achievementsBackground = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/achievements-background.svg"
-
-const clientMessage0 = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-0.png"
-const clientMessage1 = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-1.png"
-const clientMessage2 = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-2.png"
-const clientMessage3 = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-3.png"
-const clientMessage4 = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-4.png"
-const clientMessage5 = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-5.png"
-const clientMessageBackground = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-background.png"
+const recognisedBy1 = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs/recognised-by-1.png"
+const recognisedBy2 = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs/recognised-by-2.png"
+const recognisedBy3 = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs/recognised-by-3.png"
+const recognisedBy4 = "https://dn96iqv3kf32j.cloudfront.net/about/static/imgs/recognised-by-4.jpg"
 
 
-const featuresBig = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/features-background.svg"
 
 const getInTouch1 = "https://dn96iqv3kf32j.cloudfront.net/getintouch/static/imgs/get-in-touch-1.svg"
 const getInTouch2 = "https://dn96iqv3kf32j.cloudfront.net/getintouch/static/imgs/get-in-touch-2.svg"
@@ -55,9 +30,9 @@ const labs = {
 
     HeroSection: {
         contentLeft: {
-            heading: { line1: "Smart reports for Labs", line2: "" },
+            heading: { line1: "Smart reports for Labs", line2: "-" },
             descriptions: [
-                "If you are looking for a complete digital report solution for your lab then you are at the right place.",
+                "If you are looking for a complete digital report solution for your lab then you are at the right place. ",
             ],
             buttons: {
                 services: {
@@ -142,6 +117,22 @@ const labs = {
         linearGradient: "linear-gradient(to right, #455BCD, #52BBE8)"
     },
 
+    RecognisedBy: {
+        header: {
+            heading: [{
+                text: "In the News"
+            }],
+
+        },
+        trustedBrandsLogoImages: [
+            { imagePath: recognisedBy1, altText: "recognisedBy1", link: "https://yourstory.com/2021/07/funding-saas-startup-niroggyan-seed-round-healthcare/amp" },
+            { imagePath: recognisedBy2, altText: "recognisedBy2", link: "https://saasindustry.com/news/niroggyan-raises-an-undisclosed-seed-round-from-healthcare-industry-veterans/" },
+            { imagePath: recognisedBy3, altText: "recognisedBy3", link: "https://entrackr.com/2021/07/funding-in-indian-startups-this-week-12-july-17-july/" },
+            { imagePath: recognisedBy4, altText: "recognisedBy4", link: "https://www.biospectrumindia.com/news/20/15236/nha-nathealth-hosts-innovation-carnival-for-healthcare-startups.html" },
+
+        ]
+
+    },
     GetInTouch: {
 
         block1: {

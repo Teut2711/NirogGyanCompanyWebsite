@@ -193,7 +193,7 @@ const ContentRight = ({ content }) => {
         </Grid>
         <Grid item md={1}></Grid>
         <Grid item md={6} className={classes.textBox}>
-          <Typography paragraph color="textSecondary" component="div">
+          <Typography  color="textSecondary" component="div">
             <Box className={classes.datecss}>
               {date}
             </Box>

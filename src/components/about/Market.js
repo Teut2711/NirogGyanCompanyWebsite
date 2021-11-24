@@ -139,7 +139,7 @@ const Card = ({ image: { imagePath, altText = "logo-default" }, items }) => {
   return (
     <Grid container className={classes.card}   >
       <Grid container item xs={4} className={classes.imageBox} justifyContent="center" alignItems="center">
-        <Grid item  >
+        <Grid item>
           <img loading="lazy" src={imagePath} alt={altText} width="60px" height="60px" />
         </Grid>
       </Grid>
@@ -155,7 +155,7 @@ const Card = ({ image: { imagePath, altText = "logo-default" }, items }) => {
 
           </ListSubheader>
           {items.map((item, index) => (
-            <ListItem>
+            <ListItem key={index}>
               <ListItemText
                 primary={
                   <Typography variant="body1" color="textSecondary" key={index}>

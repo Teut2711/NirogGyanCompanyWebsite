@@ -181,8 +181,6 @@ const NavItemsSmallScreen = ({ links }) => {
 
 const NavItemsMediumScreen = ({ links }) => {
   const isSmallScreen = useSmallScreen();
-
-
   return <> {!isSmallScreen &&
     <Grid container item style={{ width: "max-content" }} >
       <NavLinksMenu links={links} />
@@ -202,10 +200,13 @@ const NavLinksMenu = ({ links }) => {
 const NavItem = ({ text, url, subLinks }) => {
 
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [overButton, setOverButton] = useState(false);
+  const [overMenu, setOverMenu] = useState(false);
 
-
-  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown}>
+  const SubMenu = ({ subLinks }) => <Grid container direction="column" className={classes.dropdown}
+    onMouseEnter={() => setOverMenu(true)}
+    onMouseLeave={() => setOverMenu(false)}
+  >
     {subLinks.map(({ text, url: suburl }, index) => <SubLink key={index} url={suburl} text={text} />)}
   </Grid>
 
@@ -230,14 +231,15 @@ const NavItem = ({ text, url, subLinks }) => {
       {
         subLinks &&
         <IconButton size="small" className={classes.iconButton}
-          onClick={() => setOpen(state => !state)}
+          onMouseEnter={() => setOverButton(true)}
+          onMouseLeave={() => setOverButton(false)}
         >
 
           <ExpandMoreIcon />
         </IconButton>
       }
     </Grid>
-    {open && subLinks && <SubMenu subLinks={subLinks} onMouseExit={() => setOpen(false)} />}
+    {(overButton || overMenu) && subLinks && <SubMenu subLinks={subLinks} />}
   </Grid>
 
 }

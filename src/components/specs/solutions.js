@@ -105,55 +105,78 @@ const solutions = {
         },
         linearGradient: "linear-gradient(to right, #455BCD, #52BBE8)"
     },
-
     SmartReportTypes: {
-        contentLeft: {
-            content: {
 
-                heading: "Different types of Smart Reports",
-
-                description: [
-                    { 
-                        url: "https://drive.google.com/file/d/1ECRdR74lhZZkFGmgEScEX_kkndA1Pfe0/view",
-                        text: "🏥 Advanced Smart Report",
-                        description: "Comprehensive reports for those who want to know the most about their tests and results, with simple explanations for all biomarkers, large visuals, and elaborate tips (causes, symptoms, diet and lifestyle tips relevant for disease profiles)."
-                    },
-                    { 
-                        url: "https://drive.google.com/file/d/1GqwSoSYf-Lr5ul1F3dOdBvErfL--yOxa/view", 
-                        text: "🏥 Compact Smart Report",
-                        description: "Simple and tabular Smart Reports for those who want to quickly check their visualised results. Customisable and with compact graphs, short tips, minimal text and lesser pages."
-                    },
-                    { 
-                        url: "https://drive.google.com/file/d/1rpQ70lC5xKwND7j2VDK1s5J2Rvh2OKB7/view", 
-                        text: "🏥 Dynamic Smart Report",
-                        description: "Highlight elaborate information for all abnormal results, while normal values are represented in the ‘Compact’ way. It’s the ultimate tool to deliver personalised reports to users and get them to act on their problematic areas." 
-                    },
-                    { 
-                        url: "https://drive.google.com/file/d/1DsOoghabqchcCDrrt8AstwcRMdKVrtrx/view", 
-                        text: "🏥 Covid Smart Report",
-                        description: "QR-code-enabled COVID reports, with self-care tips." 
-                    },
-                    { 
-                        url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view", 
-                        text: "🏥 Smart Summary Report(add-on)",
-                        description: "Entire report summarised in a couple of pages, with focus on the out-of-range biomarkers." 
-                    },
-                    { 
-                        url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view", 
-                        text: "🏥 Body Summary (add-on)",
-                        description: "All test results represented on a digital human body, with their respective profiles and organs." 
-                    },
-                    { 
-                        url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view", 
-                        text: "🏥 Trend Report (historical analysis)",
-                        description: "Graphical representation of disease progression. We show the patient's medical report data from past to present in a single picture. Helps both patients and doctors to keep track of biomarkers and measure effectiveness of treatments over time." 
-                    },
-                ]
-            }
+        header: {
+            heading: [{ text: "Different types of Smart Reports" }],
+            description: "We’ve put 3 years to guarantee you the best user-experience in lab reporting.",
         },
-        contentRight: {
-            image: { imagePath: heroImage, altText: "believeBackground" },
-        }
+        cardsList: [
+            {
+                image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
+                heading: {
+                    text: "Advanced",
+                    url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view",
+                },
+                content: ["Comprehensive reports for those who want to know the most about their tests and results, with simple explanations for all biomarkers, large visuals, and elaborate tips(causes, symptoms, diet and lifestyle tips relevant for disease profiles)."]
+            },
+
+            {
+                image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
+                heading: {
+                    text: "Compact",
+                    url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view",
+                },
+                content: ["Simple and tabular Smart Reports for those who want to quickly check their visualised results.Customisable and with compact graphs, short tips, minimal text and lesser pages."]
+            },
+
+            {
+                image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
+                heading: {
+                    text: "Dynamic",
+                    url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view",
+                },
+                content: ["Highlight elaborate information for all abnormal results, while normal values are represented in the ‘Compact’ way.It’s the ultimate tool to deliver personalised reports to users and get them to act on their problematic areas."]
+            },
+            {
+                image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
+                heading: {
+                    text: "Trend Report(historical analysis)",
+                    url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view",
+                },
+                content: ["Graphical representation of disease progression.We show the patient's medical report data from past to present in a single picture. Helps both patients and doctors to keep track of biomarkers and measure effectiveness of treatments over time."]
+            }
+            ,
+            {
+                image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
+                heading: {
+                    text: "Body Summary(add-on)",
+                    url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view",
+                },
+                content: ["All test results represented on a digital human body, with their respective profiles and organs."]
+            },
+            {
+                image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
+                heading: {
+                    text: "COVID reports",
+                    url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view",
+                },
+                content: ["QR-code-enabled COVID reports, with self-care tips."]
+            },
+
+            {
+                image: { imagePath: servicesCorporateOfferings, altText: "CorporateOfferings" },
+                heading: {
+                    text: "Summary(add-on)",
+                    url: "https://drive.google.com/file/d/1r59UUrtsCO_DzJelT-1Cx6HzGWfrmbft/view",
+                },
+                content: ["Entire report summarised in a couple of pages, with focus on the out-of-range biomarkers."]
+            },
+
+
+        ],
+        backgroundImage: servicesBackground
+
     },
     SmartReportsDifferentLanguages: {
         contentLeft: {

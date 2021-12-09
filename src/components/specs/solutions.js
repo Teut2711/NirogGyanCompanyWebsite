@@ -1,7 +1,8 @@
-const heroImage = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/hero-image.svg"
+import DiffentSmartReports from "../../components/solutions/static/imgs/Different types of  Smart Reports-icon.svg"
+import OurReports from "../../components/solutions/static/imgs/Our Reports-img.svg"
+import WhyChooseUs from "../../components/solutions/static/imgs/Why Choose Us-img.svg"
 
-
-
+const heroImage = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-pdf-whatsapp.png"
 
 const servicesPdfWhatsapp = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-pdf-whatsapp.png"
 const servicesAffordable = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/services-affordable.png"
@@ -14,6 +15,8 @@ const servicesInstant = "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/s
 
 const getInTouch1 = "https://dn96iqv3kf32j.cloudfront.net/getintouch/static/imgs/get-in-touch-1.svg"
 const getInTouch2 = "https://dn96iqv3kf32j.cloudfront.net/getintouch/static/imgs/get-in-touch-2.svg"
+
+
 
 
 const solutions = {
@@ -34,7 +37,7 @@ const solutions = {
         },
         contentRight: {
             image: {
-                imagePath: heroImage,
+                imagePath: null,
                 altText: "hero"
             }
         },
@@ -99,7 +102,7 @@ const solutions = {
         },
         contentRight: {
             image: {
-                imagePath: heroImage,
+                imagePath: OurReports,
                 altText: "hero"
             }
         },
@@ -191,7 +194,7 @@ const solutions = {
         },
         contentRight: {
             image: {
-                imagePath: heroImage,
+                imagePath: DiffentSmartReports,
                 altText: "hero"
             }
         },
@@ -216,7 +219,7 @@ const solutions = {
         contentRight: {
             image: {
 
-                imagePath: heroImage,
+                imagePath: WhyChooseUs,
                 altText: "hero"
             }
         },

@@ -65,7 +65,7 @@ const Card = ({ image: { imagePath, altText = "logo-default" }, heading, content
   const classes = useStyles();
 
   return (
-    <Grid container item direction="column" className={classes.serviceCard} alignItems="baseline" xs={12} sm={5}  md={2} >
+    <Grid container item direction="column" className={classes.serviceCard} justifyContent="space-between" alignItems="baseline" xs={12} sm={5}  md={2} >
       <Grid item >
         <Grid item className={`${classes.serviceCard}__logo-box`} style={{ marginBottom: "1rem" }}>
           <img loading="lazy" src={imagePath} alt={altText} width="60px" height="60px" />

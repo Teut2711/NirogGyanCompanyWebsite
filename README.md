@@ -1,5 +1,5 @@
 # Hosted on
-https://niroggyan.netlify.app/home (Last version until I worked there)
+https://niroggyan.netlify.app/home (Last version till I worked there)
 
 
 # Getting Started with Create React App
